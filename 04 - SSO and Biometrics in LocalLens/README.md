@@ -81,6 +81,20 @@ gradlew signingReport
 
 Copy the debug **SHA-1** and **SHA-256** values into the Android application settings in Firebase.
 
+#### Troubleshooting steps
+If you get an error that Java is not found, you can temporarily set the JAVA_HOME env
+1. Go to: File → Settings → Build, Execution, Deployment → Build Tools → Gradle
+Look at Gradle JDK.
+2. Confirm that your JDK is at: `C:\Program Files\Android\Android Studio\jbr` or `C:\Program Files\Android\Android Studio\jbr\bin`
+3. In PowerShell run:
+    ```
+    $env:JAVA_HOME="C:\Program Files\Android\Android Studio\jbr"
+    $env:Path="$env:JAVA_HOME\bin;$env:Path"
+    ```
+4. Then, in your project folder
+    ```
+    .\gradlew signingReport
+    ```
 ### 1.3 Enable Google authentication
 
 In Firebase Console:
