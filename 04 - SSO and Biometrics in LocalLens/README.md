@@ -86,10 +86,15 @@ If you get an error that Java is not found, you can temporarily set the JAVA_HOM
 1. Go to: File → Settings → Build, Execution, Deployment → Build Tools → Gradle
 Look at Gradle JDK.
 2. Confirm that your JDK is at: `C:\Program Files\Android\Android Studio\jbr` or `C:\Program Files\Android\Android Studio\jbr\bin`
-3. In PowerShell run:
+3. In PowerShell, on Windows, run:
     ```
     $env:JAVA_HOME="C:\Program Files\Android\Android Studio\jbr"
     $env:Path="$env:JAVA_HOME\bin;$env:Path"
+    ```
+    If using Mac, run:
+    ```
+    export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+    export PATH="$JAVA_HOME/bin:$PATH"
     ```
 4. Then, in your project folder
     ```
